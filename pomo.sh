@@ -6,6 +6,7 @@ stdBreak=$((5*60));
 lngBreak=$((20*60));
 message=''
 notify="zenity --info --text="
+if (! which zenity 2&1> /dev/null) ; then echo "Zenity must be installed" && exit 1 ; fi
 while (/bin/true); do
 	for i in $(seq 1 4); do
 		sleep $workDuration
